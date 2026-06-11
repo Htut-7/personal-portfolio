@@ -1,6 +1,6 @@
 import "../Css/Contact.css";
 import { motion } from "framer-motion";
-import { FaGithub, FaEnvelope, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -145,7 +145,7 @@ export default function Contact() {
             </motion.a>
 
             <motion.a
-              href="YOUR_DISCORD_LINK"
+              href="https://www.linkedin.com/in/sithuhtut-htut-2bb7393b1 "
               target="_blank"
               rel="noreferrer"
               aria-label="Discord"
@@ -155,7 +155,7 @@ export default function Contact() {
                 rotate: -5,
               }}
             >
-              <FaDiscord />
+              <FaLinkedin />
             </motion.a>
           </div>
         </motion.div>
