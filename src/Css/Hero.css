@@ -1,0 +1,173 @@
+.hero {
+  min-height: 100vh;
+  background: #030b14;
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem 2rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid #4eebc5;
+  transition: 0.3s ease;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-greeting {
+  color: #4eebc5;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  color: #ffffff;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+  color: #8ea2b8;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.tech-stack svg {
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tech-stack svg:hover {
+  color: #4eebc5;
+  transform: translateY(-5px);
+}
+
+.hero-btn {
+  margin-top: 2rem;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+}
+
+.hero-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 14px 28px;
+  background: #4eebc5;
+  color: #030b14;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(78, 235, 197, 0.3);
+}
+
+.hero-btn a svg {
+  font-size: 1rem;
+}
+
+.hero-btn a:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    gap: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-img img {
+    width: 280px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-img img {
+    width: 240px;
+    height: 320px;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1rem;
+  }
+
+  .tech-stack svg {
+    font-size: 1.7rem;
+  }
+}
