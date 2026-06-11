@@ -16,7 +16,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   align-items: stretch;
 }
@@ -151,22 +151,23 @@
 }
 
 @media (max-width: 480px) {
-  .projects h2 {
-    font-size: 2rem;
+  .projects {
+    padding: 80px 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-card {
-    padding: 1.25rem;
+    width: 100%;
+    min-width: 0;
   }
 
-  .project-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .project-description {
-    font-size: 0.95rem;
-  }
-   .project-image {
-    height: 180px;
+  .project-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 }

@@ -127,7 +127,10 @@ export default function Project() {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{
+          once: true,
+          amount: 0,
+        }}
       >
         {projects.map((project) => (
           <motion.div
