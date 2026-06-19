@@ -18,6 +18,7 @@ import {
   SiElementor,
 } from "react-icons/si";
 import me from "../assets/sth.jpg"
+import resume from "../assets/resume.pdf"
 
 export default function Hero() {
   return (
@@ -64,7 +65,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <a href="../resume.pdf" download>
+            <a href={resume} download>
               Download Resume <FaDownload />
             </a>
           </motion.div>
