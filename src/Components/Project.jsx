@@ -8,6 +8,8 @@ import mind from "../assets/mindlog.png";
 import talk from "../assets/talkspace.png";
 import smartmeal from "../assets/smart-meals.png";
 import weather from "../assets/weather dashboard.png";
+import task from "../assets/taskflow.png";
+import restaurant from "../assets/restaurantPOS.png";
 
 export default function Project() {
   const projects = [
@@ -81,6 +83,26 @@ export default function Project() {
       category: "Dashboard",
       image: weather,
     },
+    {
+      title: "TaskFlow",
+      description:
+      "A project management web application built with React and Firebase for creating, organizing, tracking, and managing tasks with status updates and user authentication.",
+      github: "https://github.com/Htut-7/TaskFlow.git",
+      demo: 'https://task-flow-phi-rosy.vercel.app/',
+      tech: ["React", "Vite", "Firebase"],
+      category: "Dashboard, ProjectManagement",
+      image: task, 
+    },
+    {
+      title: "restaurant-pos-system",
+      description:
+      "A full-featured Restaurant POS and Management System built with React, Firebase Authentication, and Firestore. Includes menu management, category management, order processing, cart functionality, sales analytics, revenue dashboard, and responsive admin interface.",
+      github: "https://github.com/Htut-7/restaurant-pos-system.git",
+      demo: 'https://restaurant-pos-system-kappa.vercel.app/',
+      tech: ["React", "Vite", "Firebase"],
+      category: "Dashboard, POS system",
+      image: restaurant
+    }
   ];
 
   const containerVariants = {

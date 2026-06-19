@@ -4,6 +4,21 @@
   display: flex;
   align-items: center;
   padding: 100px 2rem 2rem;
+    position: relative;
+  overflow: hidden;
+}
+
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-container{
+  position: relative;
+  z-index: 2;
 }
 
 .hero-container {
