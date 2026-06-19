@@ -63,6 +63,13 @@ html {
   border-bottom: 1px solid #fff;
 }
 
+.menu-icon{
+  display:none;
+  font-size:1.5rem;
+  color:#fff;
+  cursor:pointer;
+}
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -82,6 +89,29 @@ html {
 
   .nav-links a {
     font-size: 0.9rem;
+  }
+  .menu-icon{
+    display:block;
+    z-index:1001;
+  }
+
+  .nav-links{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:250px;
+    height:calc(100vh - 80px);
+    background:#030b14;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:2rem;
+    padding-top:3rem;
+    transition:0.3s ease;
+  }
+
+  .nav-links.active{
+    right:0;
   }
 }
 
