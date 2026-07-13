@@ -12,6 +12,7 @@ import task from "../assets/taskflow.png";
 import restaurant from "../assets/restaurantPOS.png";
 import room from "../assets/roomly.png";
 import mega from "../assets/mega.png";
+import lumen from "../assets/lumenform.png";
 
 export default function Project() {
   const projects = [
@@ -121,9 +122,36 @@ export default function Project() {
         "Mega Ace is a modern learning management system that helps students explore courses, enroll in classes, and manage their learning journey in one place. It includes user authentication, course listings, enrollment features, and a responsive dashboard experience designed for smooth navigation and easy access to educational content.",
       github: "https://github.com/Htut-7/megaace-education-platform.git",
       demo: "https://megaace-education-platform.vercel.app/",
-      tech: ["React.js", "JavaScript", "Firebase Authentication", "Cloud Firestore", "React Router", "CSS3", "vite"],
+      tech: [
+        "React.js",
+        "JavaScript",
+        "Firebase Authentication",
+        "Cloud Firestore",
+        "React Router",
+        "CSS3",
+        "vite",
+      ],
       category: "Education Platform",
-      image: mega
+      image: mega,
+    },
+    {
+      title: "LumenForm – Interactive 3D E-Commerce Store",
+      description:
+        "LumenForm is a modern 3D e-commerce web application that transforms traditional online shopping into an interactive experience. Users can explore and rotate 3D product models, securely sign in with email or Google, manage a personalized shopping cart, and place orders with data stored in Firebase Firestore. Built with React, React Three Fiber, and Firebase, the application combines immersive 3D visuals with practical e-commerce functionality and a responsive user interface.",
+      github: "https://github.com/Htut-7/lumenform.git",
+      demo: "https://lumenform.vercel.app/product/terra",
+      tech: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "Three.js",
+        "React Three Fibre",
+        "Firebase Authentication",
+        "Firestore",
+        "CSS"
+      ],
+      catgory: "E-Commerce / 3D Web Application",
+      image: lumen,
     },
   ];
 
