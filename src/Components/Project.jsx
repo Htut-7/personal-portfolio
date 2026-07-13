@@ -10,6 +10,8 @@ import smartmeal from "../assets/smart-meals.png";
 import weather from "../assets/weather dashboard.png";
 import task from "../assets/taskflow.png";
 import restaurant from "../assets/restaurantPOS.png";
+import room from "../assets/roomly.png";
+import mega from "../assets/mega.png";
 
 export default function Project() {
   const projects = [
@@ -86,23 +88,43 @@ export default function Project() {
     {
       title: "TaskFlow",
       description:
-      "A project management web application built with React and Firebase for creating, organizing, tracking, and managing tasks with status updates and user authentication.",
+        "A project management web application built with React and Firebase for creating, organizing, tracking, and managing tasks with status updates and user authentication.",
       github: "https://github.com/Htut-7/TaskFlow.git",
-      demo: 'https://task-flow-phi-rosy.vercel.app/',
+      demo: "https://task-flow-phi-rosy.vercel.app/",
       tech: ["React", "Vite", "Firebase"],
       category: "Dashboard, ProjectManagement",
-      image: task, 
+      image: task,
     },
     {
       title: "restaurant-pos-system",
       description:
-      "A full-featured Restaurant POS and Management System built with React, Firebase Authentication, and Firestore. Includes menu management, category management, order processing, cart functionality, sales analytics, revenue dashboard, and responsive admin interface.",
+        "A full-featured Restaurant POS and Management System built with React, Firebase Authentication, and Firestore. Includes menu management, category management, order processing, cart functionality, sales analytics, revenue dashboard, and responsive admin interface.",
       github: "https://github.com/Htut-7/restaurant-pos-system.git",
-      demo: 'https://restaurant-pos-system-kappa.vercel.app/',
+      demo: "https://restaurant-pos-system-kappa.vercel.app/",
       tech: ["React", "Vite", "Firebase"],
       category: "Dashboard, POS system",
-      image: restaurant
-    }
+      image: restaurant,
+    },
+    {
+      title: "Roomly-All-in-One Travel Booking Platform ",
+      description:
+        "Roomly is a modern travel booking platform that allows users to explore and book hotels, flights, and activities in one place. It features secure user authentication, personalized profiles, booking management, search and filtering, and a responsive interface designed to provide a smooth and convenient travel planning experience.",
+      github: "https://github.com/Htut-7/Roomly.git",
+      demo: "https://roomly-7ae4aw022-htut-7s-projects.vercel.app",
+      tech: ["React.js", "Firebase", "Javascript", "Css3"],
+      category: "Travel & Booking Platform",
+      image: room,
+    },
+    {
+      title: "Mega Ace — Learning Management System",
+      description:
+        "Mega Ace is a modern learning management system that helps students explore courses, enroll in classes, and manage their learning journey in one place. It includes user authentication, course listings, enrollment features, and a responsive dashboard experience designed for smooth navigation and easy access to educational content.",
+      github: "https://github.com/Htut-7/megaace-education-platform.git",
+      demo: "https://megaace-education-platform.vercel.app/",
+      tech: ["React.js", "JavaScript", "Firebase Authentication", "Cloud Firestore", "React Router", "CSS3", "vite"],
+      category: "Education Platform",
+      image: mega
+    },
   ];
 
   const containerVariants = {
