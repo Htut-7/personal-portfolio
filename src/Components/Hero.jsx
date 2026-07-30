@@ -18,7 +18,7 @@ import {
   SiElementor,
 } from "react-icons/si";
 import me from "../assets/sth.jpg"
-import resume from "../assets/STH(Resume).pdf";
+import resume from "../assets/Sithu Htut Resume.pdf";
 import SplitText from "../Components/SplitText";
 import Antigravity from "../Components/Antigravity";
 

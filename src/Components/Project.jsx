@@ -150,7 +150,7 @@ export default function Project() {
         "Firestore",
         "CSS"
       ],
-      catgory: "E-Commerce / 3D Web Application",
+      category: "E-Commerce / 3D Web Application",
       image: lumen,
     },
   ];
