@@ -13,6 +13,7 @@ import restaurant from "../assets/restaurantPOS.png";
 import room from "../assets/roomly.png";
 import mega from "../assets/mega.png";
 import lumen from "../assets/lumenform.png";
+import { useState } from "react";
 
 export default function Project() {
   const projects = [
@@ -148,12 +149,23 @@ export default function Project() {
         "React Three Fibre",
         "Firebase Authentication",
         "Firestore",
-        "CSS"
+        "CSS",
       ],
       category: "E-Commerce / 3D Web Application",
       image: lumen,
     },
   ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 4;
+  console.log(currentPage);
+
+  const lastIndex = currentPage * projectsPerPage;
+  const firstIndex = lastIndex - projectsPerPage;
+
+  const currentProject = projects.slice(firstIndex, lastIndex);
+  console.log(currentProject);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
 
   const containerVariants = {
     hidden: {},
@@ -172,6 +184,9 @@ export default function Project() {
     show: {
       opacity: 1,
       y: 0,
+      transition: {
+        duration: 0.5,
+      },
     },
   };
 
@@ -195,16 +210,13 @@ export default function Project() {
       </motion.h2>
 
       <motion.div
+        key={currentPage}
         className="project-grid"
         variants={containerVariants}
         initial="hidden"
-        whileInView="show"
-        viewport={{
-          once: true,
-          amount: 0,
-        }}
+        animate="show"
       >
-        {projects.map((project) => (
+        {currentProject?.map((project) => (
           <motion.div
             className="project-card"
             key={project.title}
@@ -263,6 +275,26 @@ export default function Project() {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="pagination">
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+
+        <span>
+          {currentPage} of {totalPages}
+        </span>
+
+        <button
+          onClick={() => setCurrentPage((prev) => prev + 1)}
+          // disabled={currentPage===totalPages}
+        >
+          Next
+        </button>
+      </div>
     </section>
   );
 }
