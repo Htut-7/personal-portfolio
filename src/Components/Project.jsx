@@ -1,6 +1,9 @@
+
 import "../Css/Project.css";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaLock } from "react-icons/fa";
+import { useState } from "react";
+
 import nexora from "../assets/nexora.png";
 import moviehub from "../assets/movie_hub.png";
 import jobFinder from "../assets/job-finder.png";
@@ -13,10 +16,24 @@ import restaurant from "../assets/restaurantPOS.png";
 import room from "../assets/roomly.png";
 import mega from "../assets/mega.png";
 import lumen from "../assets/lumenform.png";
-import { useState } from "react";
+import log from "../assets/log.png";
+
+
 
 export default function Project() {
   const projects = [
+     {
+      title: "Log Management System",
+      description:
+        "A full-stack log management application built with Next.js, TypeScript, MongoDB, and Tailwind CSS. Access is restricted to authorized users and administrators.",
+      github: "https://github.com/Htut-7/log-management-system.git",
+      demo: "https://log-management-system-kappa.vercel.app/",
+      demoNote:
+        "Restricted demo: Login requires authorized credentials configured through environment variables. Contact me for demo access.",
+      tech: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
+      category: "Full-Stack / Monitoring",
+      image: log,
+    },
     {
       title: "Nexora Commerce",
       description:
@@ -94,33 +111,33 @@ export default function Project() {
       github: "https://github.com/Htut-7/TaskFlow.git",
       demo: "https://task-flow-phi-rosy.vercel.app/",
       tech: ["React", "Vite", "Firebase"],
-      category: "Dashboard, ProjectManagement",
+      category: "Project Management",
       image: task,
     },
     {
-      title: "restaurant-pos-system",
+      title: "Restaurant POS System",
       description:
-        "A full-featured Restaurant POS and Management System built with React, Firebase Authentication, and Firestore. Includes menu management, category management, order processing, cart functionality, sales analytics, revenue dashboard, and responsive admin interface.",
+        "A restaurant POS and management system built with React and Firebase. Includes menu and category management, order processing, cart functionality, sales analytics, a revenue dashboard, and a responsive admin interface.",
       github: "https://github.com/Htut-7/restaurant-pos-system.git",
       demo: "https://restaurant-pos-system-kappa.vercel.app/",
       tech: ["React", "Vite", "Firebase"],
-      category: "Dashboard, POS system",
+      category: "POS System",
       image: restaurant,
     },
     {
-      title: "Roomly-All-in-One Travel Booking Platform ",
+      title: "Roomly — Travel Booking Platform",
       description:
-        "Roomly is a modern travel booking platform that allows users to explore and book hotels, flights, and activities in one place. It features secure user authentication, personalized profiles, booking management, search and filtering, and a responsive interface designed to provide a smooth and convenient travel planning experience.",
+        "A travel booking platform for exploring and booking hotels, flights, and activities. Features authentication, personalized profiles, booking management, search, filtering, and a responsive interface.",
       github: "https://github.com/Htut-7/Roomly.git",
       demo: "https://roomly-7ae4aw022-htut-7s-projects.vercel.app",
-      tech: ["React.js", "Firebase", "Javascript", "Css3"],
-      category: "Travel & Booking Platform",
+      tech: ["React.js", "Firebase", "JavaScript", "CSS3"],
+      category: "Travel & Booking",
       image: room,
     },
     {
       title: "Mega Ace — Learning Management System",
       description:
-        "Mega Ace is a modern learning management system that helps students explore courses, enroll in classes, and manage their learning journey in one place. It includes user authentication, course listings, enrollment features, and a responsive dashboard experience designed for smooth navigation and easy access to educational content.",
+        "A learning management system that helps students explore courses, enroll in classes, and manage their learning journey through a responsive interface.",
       github: "https://github.com/Htut-7/megaace-education-platform.git",
       demo: "https://megaace-education-platform.vercel.app/",
       tech: [
@@ -130,15 +147,15 @@ export default function Project() {
         "Cloud Firestore",
         "React Router",
         "CSS3",
-        "vite",
+        "Vite",
       ],
       category: "Education Platform",
       image: mega,
     },
     {
-      title: "LumenForm – Interactive 3D E-Commerce Store",
+      title: "LumenForm — Interactive 3D E-Commerce Store",
       description:
-        "LumenForm is a modern 3D e-commerce web application that transforms traditional online shopping into an interactive experience. Users can explore and rotate 3D product models, securely sign in with email or Google, manage a personalized shopping cart, and place orders with data stored in Firebase Firestore. Built with React, React Three Fiber, and Firebase, the application combines immersive 3D visuals with practical e-commerce functionality and a responsive user interface.",
+        "An interactive 3D e-commerce application featuring rotatable product models, email and Google authentication, a shopping cart, and order placement with data stored in Firebase Firestore.",
       github: "https://github.com/Htut-7/lumenform.git",
       demo: "https://lumenform.vercel.app/product/terra",
       tech: [
@@ -146,26 +163,26 @@ export default function Project() {
         "Vite",
         "JavaScript",
         "Three.js",
-        "React Three Fibre",
+        "React Three Fiber",
         "Firebase Authentication",
         "Firestore",
         "CSS",
       ],
-      category: "E-Commerce / 3D Web Application",
+      category: "3D E-Commerce",
       image: lumen,
-    },
+    }
+   
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 4;
-  console.log(currentPage);
 
-  const lastIndex = currentPage * projectsPerPage;
-  const firstIndex = lastIndex - projectsPerPage;
-
-  const currentProject = projects.slice(firstIndex, lastIndex);
-  console.log(currentProject);
   const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const firstIndex = (currentPage - 1) * projectsPerPage;
+  const currentProjects = projects.slice(
+    firstIndex,
+    firstIndex + projectsPerPage
+  );
 
   const containerVariants = {
     hidden: {},
@@ -193,18 +210,10 @@ export default function Project() {
   return (
     <section className="projects" id="project">
       <motion.h2
-        initial={{
-          opacity: 0,
-          y: 30,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{
-          duration: 0.6,
-        }}
+        transition={{ duration: 0.6 }}
       >
         My Projects
       </motion.h2>
@@ -216,24 +225,21 @@ export default function Project() {
         initial="hidden"
         animate="show"
       >
-        {currentProject?.map((project) => (
+        {currentProjects.map((project) => (
           <motion.div
             className="project-card"
             key={project.title}
             variants={cardVariants}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
+            whileHover={{ y: -10, scale: 1.02 }}
+            transition={{ duration: 0.3 }}
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-            />
+            {project.image && (
+              <img
+                src={project.image}
+                alt={`${project.title} preview`}
+                className="project-image"
+              />
+            )}
 
             <span className="project-category">{project.category}</span>
 
@@ -241,34 +247,43 @@ export default function Project() {
 
             <p className="project-description">{project.description}</p>
 
+            {project.demoNote && (
+              <div className="project-demo-note">
+                <div className="project-demo-note-title">
+                  <FaLock aria-hidden="true" />
+                  <strong>Restricted Demo</strong>
+                </div>
+
+                <p>{project.demoNote}</p>
+              </div>
+            )}
+
             <div className="project-tech">
               {project.tech.map((tech) => (
-                <motion.span
-                  key={tech}
-                  whileHover={{
-                    scale: 1.1,
-                  }}
-                >
+                <motion.span key={tech} whileHover={{ scale: 1.1 }}>
                   {tech}
                 </motion.span>
               ))}
             </div>
 
             <div className="project-links">
-              <a href={project.github} target="_blank" rel="noreferrer">
-                <FaGithub />
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub aria-hidden="true" />
                 GitHub
               </a>
 
               {project.demo && (
                 <a
-                  href={project.demo || "#"}
+                  href={project.demo}
                   target="_blank"
-                  rel="noreferrer"
-                  className={!project.demo ? "disabled-link" : ""}
+                  rel="noopener noreferrer"
                 >
-                  <FaExternalLinkAlt />
-                  Demo
+                  <FaExternalLinkAlt aria-hidden="true" />
+                  Live Demo
                 </a>
               )}
             </div>
@@ -278,7 +293,7 @@ export default function Project() {
 
       <div className="pagination">
         <button
-          onClick={() => setCurrentPage(currentPage - 1)}
+          onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
           disabled={currentPage === 1}
         >
           Previous
@@ -289,8 +304,10 @@ export default function Project() {
         </span>
 
         <button
-          onClick={() => setCurrentPage((prev) => prev + 1)}
-          // disabled={currentPage===totalPages}
+          onClick={() =>
+            setCurrentPage((page) => Math.min(totalPages, page + 1))
+          }
+          disabled={currentPage === totalPages}
         >
           Next
         </button>

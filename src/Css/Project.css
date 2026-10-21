@@ -166,6 +166,35 @@
 }
 
 
+.project-demo-note {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d6b86a;
+  border-radius: 8px;
+  background: rgba(214, 184, 106, 0.08);
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.project-demo-note-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  color: #b08a28;
+}
+
+.project-demo-note p {
+  margin: 0;
+}
+
+.project-demo-note svg {
+  flex-shrink: 0;
+}
+
+
+
 @media (max-width: 768px) {
   .projects {
     padding: 80px 1.5rem;
