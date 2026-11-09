@@ -1,4 +1,3 @@
-
 import "../Css/Project.css";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaLock } from "react-icons/fa";
@@ -17,12 +16,21 @@ import room from "../assets/roomly.png";
 import mega from "../assets/mega.png";
 import lumen from "../assets/lumenform.png";
 import log from "../assets/log.png";
-
-
+import json from "../assets/json.png";
 
 export default function Project() {
   const projects = [
-     {
+    {
+      title: "JSON-Toolkit",
+      description:
+        "A web-based utility platform built with Next.js and Tailwind CSS, providing useful tools for formatting, validating, minifying, and managing JSON data.",
+      github: "https://github.com/Htut-7/JSON-Toolkit.git",
+      demo: "https://json-toolkit-seven.vercel.app/",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+      category: "Developer Tools",
+      image: json,
+    },
+    {
       title: "Log Management System",
       description:
         "A full-stack log management application built with Next.js, TypeScript, MongoDB, and Tailwind CSS. Access is restricted to authorized users and administrators.",
@@ -170,8 +178,7 @@ export default function Project() {
       ],
       category: "3D E-Commerce",
       image: lumen,
-    }
-   
+    },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -181,7 +188,7 @@ export default function Project() {
   const firstIndex = (currentPage - 1) * projectsPerPage;
   const currentProjects = projects.slice(
     firstIndex,
-    firstIndex + projectsPerPage
+    firstIndex + projectsPerPage,
   );
 
   const containerVariants = {
