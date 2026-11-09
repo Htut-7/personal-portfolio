@@ -2,7 +2,6 @@ import "../Css/Project.css";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaLock } from "react-icons/fa";
 import { useState } from "react";
-
 import nexora from "../assets/nexora.png";
 import moviehub from "../assets/movie_hub.png";
 import jobFinder from "../assets/job-finder.png";
